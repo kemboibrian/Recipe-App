@@ -1,6 +1,6 @@
 
 import { useEffect, useState } from 'react';
-import './Recipe.css';
+//import './Recipe.css';
 import { useParams } from 'react-router-dom';
 import { API_KEY } from '../assets/API_KEY';
 import { Button, Skeleton } from '@mui/material';

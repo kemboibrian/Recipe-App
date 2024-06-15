@@ -1,6 +1,7 @@
 
-import './Cuisine.css';
+//import './Cuisine.css';
 import { motion } from 'framer-motion';
+
 import { Link, useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import RecipeCard from '../components/RecipeCard';

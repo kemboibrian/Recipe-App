@@ -1,6 +1,6 @@
 import Veggie from "../components/Veggie";
 import Popular from "../components/Popular";
-import './Home.css';
+//import './Home.css';
 
 const Home = () => {
     return (

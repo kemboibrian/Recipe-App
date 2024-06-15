@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import RecipeCard from "./RecipeCard";
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 import '@splidejs/splide/dist/css/splide.min.css';
-import './Popular.css';
+//import './Popular.css';
 import { API_KEY } from '../assets/API_KEY';
 import { Skeleton } from "@mui/material";
 

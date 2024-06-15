@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import RecipeCard from "../components/RecipeCard";
-import './Searched.css';
+//import './Searched.css';
 import { API_KEY } from "../assets/API_KEY";
 import { Skeleton } from "@mui/material";
 

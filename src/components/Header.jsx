@@ -1,7 +1,6 @@
 
-import './Header.css';
-import { GiSpoon } from 'react-icons/gi';
-import { BiSolidUserCircle } from 'react-icons/bi'
+//import './Header.css';
+import { GiChefToque, GiCook, GiSpoon } from 'react-icons/gi';
 import { Link } from 'react-router-dom';
 
 const Header = () => {
@@ -9,11 +8,11 @@ const Header = () => {
         <div className="header-container">
             <Link to={'/'}>
                 <h1>
-                    All Recipes
-                    <GiSpoon />
+                    Home 
+                    <GiCook />
                 </h1>
             </Link>
-            <BiSolidUserCircle className='user-img' />
+            
         </div>
     )
 }

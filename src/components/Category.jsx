@@ -1,8 +1,8 @@
 
 import { FaPizzaSlice, FaHamburger } from 'react-icons/fa';
-import { GiNoodles, GiChopsticks } from 'react-icons/gi';
+import { GiNoodles, GiChopsticks, GiChiliPepper, GiEating, GiKnifeFork, GiSushis } from 'react-icons/gi';
 import { NavLink } from 'react-router-dom';
-import './Category.css'
+//import './Category.css'
 
 const Category = () => {
     return (
@@ -19,9 +19,9 @@ const Category = () => {
                 <GiNoodles />
                 <p>Thai</p>
             </NavLink>
-            <NavLink to={'/cuisine/Chinese'}>
-                <GiChopsticks />
-                <p>Chinese</p>
+            <NavLink to={'/cuisine/Asian'}>
+                <GiSushis />
+                <p>Asian</p>
             </NavLink>
         </div>
     )
