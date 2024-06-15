@@ -1,4 +1,4 @@
-import Veggie from "../components/Veggie";
+import Vegan from "../components/Vegan";
 import Popular from "../components/Popular";
 //import './Home.css';
 
@@ -6,7 +6,7 @@ const Home = () => {
     return (
         <div className="home-container">
             <Popular />
-            <Veggie />
+            <Vegan />
         </div>
     )
 }

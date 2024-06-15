@@ -1,7 +1,5 @@
-
 //import './Cuisine.css';
 import { motion } from 'framer-motion';
-
 import { Link, useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import RecipeCard from '../components/RecipeCard';
@@ -9,7 +7,6 @@ import { API_KEY } from '../assets/API_KEY';
 import { Skeleton } from '@mui/material';
 
 const Cuisine = () => {
-    
     const [cuisine, setCuisine] = useState([]);
     const params = useParams();
     console.log(params);
@@ -25,21 +22,20 @@ const Cuisine = () => {
         getCuisine(params.type);
     }, [params.type]);
 
-    if(cuisine.length === 0) 
-    {
-        const number = [1,2,3,4,5,6,7,8,9,10];
+    if (cuisine.length === 0) {
+        const number = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
         return (
             <div className="cuisine-skeleton">
-            {number.map((data) => (
-            <Skeleton 
-                variant='rounded'
-                width={300}
-                height={200}
-                key={data}
-                animation='wave'
-                className='cuisine-skltn'
-            />
-            ))}
+                {number.map((data) => (
+                    <Skeleton
+                        variant='rounded'
+                        width={300}
+                        height={200}
+                        key={data}
+                        animation='wave'
+                        className='cuisine-skltn'
+                    />
+                ))}
             </div>
         )
     }
@@ -47,7 +43,14 @@ const Cuisine = () => {
     return (
         <div className="cuisine-container">
             {cuisine.map((data) => (
-                <RecipeCard data={data} key={data.id} />
+                <motion.div
+                    key={data.id}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5 }}
+                >
+                    <RecipeCard data={data} />
+                </motion.div>
             ))}
         </div>
     )
