@@ -1,6 +1,6 @@
 
 //import './Header.css';
-import { GiChefToque, GiCook, GiSpoon } from 'react-icons/gi';
+import { GiCook,} from 'react-icons/gi';
 import { Link } from 'react-router-dom';
 
 const Header = () => {

@@ -18,7 +18,7 @@ npm
 
 ### Installation instruction
 
-Git
+Git clone git@github.com:kemboibrian/recipe-app.git
 
 # Live Link
 [Git]()
@@ -28,7 +28,21 @@ Git
 ## Technologies used
 JavaScript
 
+Python
+
+React icons
+
+Styled components
+
+Spoonacular Api
+
+Splide
+
 Html
+
+SQL 
+
+FastApi
 
 React + Vite
 
@@ -36,9 +50,7 @@ Css
 
 Github
 
-Tailwind UI
-
-Semantic UI
+Material UI
 
 ## Support and contact details
 github.com/kemboibrian
