@@ -20,6 +20,9 @@ npm
 
 Git clone git@github.com:kemboibrian/recipe-app.git
 
+npm install
+
+npm run dev
 # Live Link
 [Git]()
 
