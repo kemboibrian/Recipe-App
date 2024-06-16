@@ -1,13 +1,13 @@
-import React from 'react';
+
 import styled from 'styled-components';
+import { useLocation } from 'react-router-dom';
 import { MdEmail } from 'react-icons/md';
 
-// Styled component for the footer
 const FooterContainer = styled.footer`
   background-color: #333;
-  color: #fff;
   padding: 20px;
   text-align: center;
+ border-radius: 10px;
 `;
 
 const FooterText = styled.p`
@@ -34,11 +34,21 @@ const IconWrapper = styled.span`
 `;
 
 const Footer = () => {
+  const location = useLocation();
+
+  // Check if the current path is the first page ("/")
+  const isFirstPage = location.pathname === '/';
+
+  // Render the footer only on the first page
+  if (!isFirstPage) {
+    return null;
+  }
+
   return (
     <FooterContainer>
       <div className="container">
         <FooterText>
-          Contact Us: 
+        &copy; 2024 kemboibrian. All rights reserved.
           <ContactLink href="mailto:contact@briankitchen.com">
             <IconWrapper><MdEmail /></IconWrapper>
             recipes@briankitchen.com
