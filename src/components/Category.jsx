@@ -1,6 +1,6 @@
 
 import { FaPizzaSlice, FaHamburger } from 'react-icons/fa';
-import { GiNoodles, GiChopsticks, GiChiliPepper, GiEating, GiKnifeFork, GiSushis } from 'react-icons/gi';
+import { GiNoodles,GiSushis } from 'react-icons/gi';
 import { NavLink } from 'react-router-dom';
 //import './Category.css'
 
@@ -28,3 +28,4 @@ const Category = () => {
 }
 
 export default Category;
+

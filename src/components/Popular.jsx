@@ -1,27 +1,30 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
-
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import "@splidejs/splide/dist/css/themes/splide-default.min.css";
-
 import { Link } from "react-router-dom";
 
 const Popular = () => {
   const [popular, setPopular] = useState([]);
 
   const getPopularRecipes = async () => {
-    const getData = localStorage.getItem("popular");
+    try {
+      const getData = localStorage.getItem("popular");
 
-    if (getData) {
-      setPopular(JSON.parse(getData));
-    } else {
-      const resp = await fetch(
-        `https://api.spoonacular.com/recipes/random?apiKey=${process.env.REACT_APP_FOOD_API_KEY}&number=10`
-      );
-      const data = await resp.json();
-      setPopular(data.recipes);
-      localStorage.setItem("popular", JSON.stringify(data.recipes));
-      console.log(data.recipes);
+      if (getData) {
+        const parsedData = JSON.parse(getData);
+        setPopular(parsedData);
+      } else {
+        const resp = await fetch(
+          `https://api.spoonacular.com/recipes/random?apiKey=${process.env.REACT_APP_FOOD_API_KEY}&number=10`
+        );
+        const data = await resp.json();
+        setPopular(data.recipes);
+        localStorage.setItem("popular", JSON.stringify(data.recipes));
+      }
+    } catch (error) {
+      console.error("Error fetching or parsing data:", error.message);
+      setPopular([]); // Set popular to empty array on error
     }
   };
 

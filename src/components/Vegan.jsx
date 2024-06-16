@@ -55,8 +55,8 @@ const Vegan = () => {
           gap: "5rem",
           breakpoints: {
             767: { perPage: 2 },
-            640: { perPage: 1 },
-          },
+            640: { perPage: 1 }
+          }
         }}
       >
         {vegan.map(({ title, id, image }) => (
