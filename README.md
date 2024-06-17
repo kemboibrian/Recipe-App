@@ -26,7 +26,10 @@ npm run dev
 # Live Link
 [Git]()
 
-# Demo video 
+# Demo video Link
+https://youtu.be/v1BZxqxxTuo
+
+
 
 ## Technologies used
 JavaScript
