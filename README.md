@@ -22,7 +22,7 @@ Git clone git@github.com:kemboibrian/recipe-app.git
 
 npm install
 
-npm run dev
+npm run dev to get the frontend started then follow the link
 
 run  fastapi dev app.py  to get the bacjend started
 # Live Link
@@ -35,6 +35,8 @@ https://youtu.be/KMLT0Zbfn-I?si=JTqTsJUYupiy6A4q
 
 ## Technologies used
 JavaScript
+
+React + Vite
 
 Python
 
@@ -51,8 +53,6 @@ Html
 SQL 
 
 FastApi
-
-React + Vite
 
 Css
 
