@@ -19,8 +19,13 @@ const Popular = () => {
           `https://api.spoonacular.com/recipes/random?apiKey=${process.env.REACT_APP_FOOD_API_KEY}&number=10`
         );
         const data = await resp.json();
-        setPopular(data.recipes);
-        localStorage.setItem("popular", JSON.stringify(data.recipes));
+        if (data && data.recipes) {
+          setPopular(data.recipes);
+          localStorage.setItem("popular", JSON.stringify(data.recipes));
+        } else {
+          console.error("API response data is undefined or null");
+          setPopular([]); // Set popular to empty array on error
+        }
       }
     } catch (error) {
       console.error("Error fetching or parsing data:", error.message);
