@@ -23,6 +23,8 @@ Git clone git@github.com:kemboibrian/recipe-app.git
 npm install
 
 npm run dev
+
+run  fastapi dev app.py  to get the bacjend started
 # Live Link
 [Git](https://youtu.be/KMLT0Zbfn-I?si=JTqTsJUYupiy6A4q)
 
