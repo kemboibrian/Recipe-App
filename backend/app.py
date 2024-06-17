@@ -1,6 +1,12 @@
-from fastapi import FastAPI, HTTPException, Depends
+from fastapi import FastAPI, HTTPException
 from typing import List
 from pydantic import BaseModel
+import sqlite3
+from dotenv import load_dotenv
+import os
+
+# Load environment variables from .env file
+load_dotenv()
 
 # Import database and models
 from database import db
@@ -119,3 +125,9 @@ async def delete_category(category_id: int):
     query = "DELETE FROM categories WHERE id = ?"
     db.execute(query, (category_id,))
     return {"message": "Category deleted successfully"}
+
+# Run the application with Uvicorn (if using Uvicorn for development)
+if __name__ == "__main__":
+    import uvicorn
+
+    uvicorn.run(app, host="0.0.0.0", port=8000)
