@@ -1,49 +1,24 @@
 import sqlite3
 
-def initialize_database():
-    conn = sqlite3.connect("backend/recipe.sqlite3")
-    conn.execute("PRAGMA foreign_keys = 1")  # Enable foreign key constraints
+class Database:
+    def __init__(self, filename):
+        self.conn = sqlite3.connect(filename)
+        self.cursor = self.conn.cursor()
 
-    # Create tables if they don't exist
-    conn.execute("""
-        CREATE TABLE IF NOT EXISTS recipes (
-            id INTEGER PRIMARY KEY AUTOINCREMENT,
-            name TEXT NOT NULL,
-            description TEXT,
-            instructions TEXT NOT NULL,
-            category_id INTEGER,
-            FOREIGN KEY (category_id) REFERENCES categories(id)
-        )
-    """)
+    def fetchall(self, query, params=None):
+        self.cursor.execute(query, params or ())
+        return self.cursor.fetchall()
 
-    conn.execute("""
-        CREATE TABLE IF NOT EXISTS ingredients (
-            id INTEGER PRIMARY KEY AUTOINCREMENT,
-            name TEXT NOT NULL UNIQUE,
-            unit TEXT,
-            calories INTEGER
-        )
-    """)
+    def fetchone(self, query, params=None):
+        self.cursor.execute(query, params or ())
+        return self.cursor.fetchone()
 
-    conn.execute("""
-        CREATE TABLE IF NOT EXISTS categories (
-            id INTEGER PRIMARY KEY AUTOINCREMENT,
-            name TEXT NOT NULL UNIQUE
-        )
-    """)
+    def execute(self, query, params=None):
+        self.cursor.execute(query, params or ())
+        self.conn.commit()
 
-    conn.execute("""
-        CREATE TABLE IF NOT EXISTS recipe_ingredients (
-            recipe_id INTEGER,
-            ingredient_id INTEGER,
-            PRIMARY KEY (recipe_id, ingredient_id),
-            FOREIGN KEY (recipe_id) REFERENCES recipes(id),
-            FOREIGN KEY (ingredient_id) REFERENCES ingredients(id)
-        )
-    """)
+    def close(self):
+        self.conn.close()
 
-    conn.commit()
-    conn.close()
-
-if __name__ == "__main__":
-    initialize_database()
+# Initialize the database connection
+db = Database("recipe.sqlite3")
