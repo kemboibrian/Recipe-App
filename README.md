@@ -24,10 +24,10 @@ npm install
 
 npm run dev
 # Live Link
-[Git]()
+[Git](https://youtu.be/KMLT0Zbfn-I?si=JTqTsJUYupiy6A4q)
 
 # Demo video Link
-https://youtu.be/v1BZxqxxTuo
+https://youtu.be/KMLT0Zbfn-I?si=JTqTsJUYupiy6A4q
 
 
 
