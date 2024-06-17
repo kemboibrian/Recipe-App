@@ -11,7 +11,7 @@ const Popular = () => {
     try {
       const getData = localStorage.getItem("popular");
 
-      if (getData) {
+      if (getData?.trim()) { // Check if getData exists and has content
         const parsedData = JSON.parse(getData);
         setPopular(parsedData);
       } else {
@@ -19,11 +19,12 @@ const Popular = () => {
           `https://api.spoonacular.com/recipes/random?apiKey=${process.env.REACT_APP_FOOD_API_KEY}&number=10`
         );
         const data = await resp.json();
-        if (data && data.recipes) {
-          setPopular(data.recipes);
-          localStorage.setItem("popular", JSON.stringify(data.recipes));
+        const recipes = data?.recipes || []; // Default to empty array if recipes is missing
+        if (recipes.length > 0) {
+          setPopular(recipes);
+          localStorage.setItem("popular", JSON.stringify(recipes));
         } else {
-          console.error("API response data is undefined or null");
+          console.error("API response data is missing recipes property");
           setPopular([]); // Set popular to empty array on error
         }
       }
