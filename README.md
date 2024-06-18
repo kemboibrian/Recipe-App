@@ -24,11 +24,13 @@ npm install
 
 npm run dev to get the frontend started then follow the link
 
-run  fastapi dev app.py  to get the bacjend started
-# Live Link
-[Git](https://youtu.be/KMLT0Zbfn-I?si=JTqTsJUYupiy6A4q)
+run  fastapi dev app.py  to get the backend started
 
-# Demo video Link
+# Live Link
+[Git](https://recipe-app-gilt-seven.vercel.app/)
+
+# Demo video Links
+https://youtu.be/99_J-M_zxIU
 https://youtu.be/KMLT0Zbfn-I?si=JTqTsJUYupiy6A4q
 
 
