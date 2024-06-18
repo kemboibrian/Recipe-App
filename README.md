@@ -22,15 +22,17 @@ Git clone git@github.com:kemboibrian/recipe-app.git
 
 npm install
 
-npm run dev to get the frontend started then follow the link
+To get the frontend started run npm install
+then npm run dev - (sometimes the api does not fetch all data;running the command again to restart solves it)
 
-run  fastapi dev app.py  to get the backend started
+To get the backend started  cd backend then run - fastapi dev app.py  
 
 # Live Link
 [Git](https://recipe-app-gilt-seven.vercel.app/)
-
+ 
 # Demo video Links
-https://youtu.be/99_J-M_zxIU
+https://youtu.be/99_J-M_zxIU  
+
 https://youtu.be/KMLT0Zbfn-I?si=JTqTsJUYupiy6A4q
 
 
